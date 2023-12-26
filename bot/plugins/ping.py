@@ -8,7 +8,7 @@ from bot.core.db.add import add_user_to_database
 @Client.on_message(filters.command(["start", "ping"]) & filters.private)
 async def ping_handler(c: Client, m: "types.Message"):
     if not m.from_user:
-        return await m.reply_text("I don't know about you sir :(")
+        return await m.reply_text("I don't know about you sir/mam :(")
     await add_user_to_database(c, m)
     await c.send_flooded_message(
         chat_id=m.chat.id,
@@ -26,7 +26,7 @@ async def ping_handler(c: Client, m: "types.Message"):
 @Client.on_message(filters.command("help") & filters.private)
 async def help_handler(c: Client, m: "types.Message"):
     if not m.from_user:
-        return await m.reply_text("I don't know about you sar :(")
+        return await m.reply_text("I don't know about you sir/mam :(")
     await add_user_to_database(c, m)
     await c.send_flooded_message(
         chat_id=m.chat.id,
